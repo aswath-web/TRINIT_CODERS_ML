@@ -1,0 +1,106 @@
+{% load static %} 
+<style>
+  .bg{
+    background-repeat: no-repeat;
+    background-size: 1800px 900px;
+    background-position: top;
+
+}
+</style>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" href="{% static 'bg.css' %}" >
+<head><title>Crop Selection</title></head>
+<body class="bg" style="background-image: url('{%static 'img/2.jpg' %}');">
+<div class="container"> 
+
+    <form class="well form-horizontal" action="{% url 'predict' %}" method="post"  id="contact_form">
+    {%csrf_token%}  
+<fieldset>
+
+<!-- Form Name -->
+<center>
+<div style="background-color: black; align-items: center;">
+<legend style="color:gold; font-weight:bolder;"> Give us the Soil Proportion and we say what is <B>Best to Cultivate</B>...!!!!</legend>
+</div>
+</center>
+<!-- Text input-->
+
+<div class="form-group">
+  <label class="col-md-4 control-label" style="color: white; font-weight:bolder;">Nitrogen</label>  
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  <input  name="n" placeholder="Nitrogen(1-100)" class="form-control"  type="number">
+    </div>
+  </div>
+</div>
+<div class="form-group">
+  <label class="col-md-4 control-label" style="color: white; font-weight:bolder;">Phoshporus </label>  
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  <input  name="p" placeholder="Phoshporus(1-100)" class="form-control"  type="number">
+    </div>
+  </div>
+</div>
+<div class="form-group">
+  <label class="col-md-4 control-label" style="color: white; font-weight:bolder;">Potassium</label>  
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  <input  name="k" placeholder="Potassium(1-100)" class="form-control"  type="number">
+    </div>
+  </div>
+</div>
+<div class="form-group">
+  <label class="col-md-4 control-label" style="color: white; font-weight:bolder;">Temparture</label>  
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  <input  name="temp" placeholder="Temparture(12-25)" class="form-control"  type="number">
+    </div>
+  </div>
+</div>
+<div class="form-group">
+  <label class="col-md-4 control-label" style="color: white; font-weight:bolder;">Humidity</label>  
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  <input  name="humi" placeholder="Humidity(1-100)" class="form-control"  type="number">
+    </div>
+  </div>
+</div>
+<div class="form-group">
+  <label class="col-md-4 control-label" style="color: white; font-weight:bolder;">ph</label>  
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  <input  name="ph" placeholder="5.5-6.5" class="form-control"  type="number">
+    </div>
+  </div>
+</div>
+<div class="form-group">
+  <label class="col-md-4 control-label" style="color: white; font-weight:bolder;">Rainfall</label>  
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  <input  name="rain" placeholder="Rainfall(50-500)" class="form-control"  type="number">
+    </div>
+  </div>
+</div>
+<!-- Text input-->
+
+<!-- Success message -->
+<!-- Button -->
+<div class="form-group">
+  <label class="col-md-4 control-label"></label>
+  <div class="col-md-4">
+    <button type="submit" class="btn btn-warning" >Submit<span class="glyphicon glyphicon-send"></span></button>
+  </div>
+</div>
+
+</fieldset>
+</form>
+</div>
+    </div><!-- /.container -->
+</body>
