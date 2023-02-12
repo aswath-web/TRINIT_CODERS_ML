@@ -45,3 +45,6 @@ Fill the Information about soil required by model in web app's UI
 
 # Output
 The model will suggest a crop that is suitable for soil.
+
+#Video Link
+https://drive.google.com/file/d/1GCCb0RvBqosgkI7EVrJBEiBNpaemkKxJ/view?usp=share_link
